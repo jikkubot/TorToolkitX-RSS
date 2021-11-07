@@ -61,12 +61,14 @@ def add_handlers(bot: TelegramClient):
 
     bot.add_event_handler(
         handle_leech_command,
-        events.NewMessage(
-            pattern=command_process(get_command("LEECH")), chats=get_val("ALD_USR")
-        ),
+        events.NewMessage(pattern=r"magnet\:\?xt\=urn\:btih\:([A-F\d]+)",
+        chats=get_val("ALD_USR"))
     )
-
     bot.add_event_handler(
+        handle_leech_command,
+        events.NewMessage(pattern=r"https?://(?:[-\w.]|(?:%[\da-fA-F]{2}))+",
+        chats=get_val("ALD_USR"))
+    )
         handle_purge_command,
         events.NewMessage(
             pattern=command_process(get_command("PURGE")), chats=get_val("ALD_USR")
@@ -251,9 +253,6 @@ def add_handlers(bot: TelegramClient):
 
 
 async def handle_leech_command(e):
-    if not e.is_reply:
-        await e.reply("Reply to a link or magnet")
-    else:
         rclone = False
         tsp = time.time()
         buts = [[KeyboardButtonCallback("To Telegram", data=f"leechselect tg {tsp}")]]
