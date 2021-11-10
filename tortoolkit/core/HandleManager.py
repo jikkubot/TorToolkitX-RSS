@@ -342,7 +342,7 @@ async def get_leech_choice(e, timestamp):
     defleech = get_val("DEFAULT_TIMEOUT")
 
     while not lis[0]:
-        if (time.time() - start) >= 10:  # TIMEOUT_SEC:
+        if (time.time() - start) >= 15:  # TIMEOUT_SEC:
 
             if defleech == "leech":
                 return "tg"
@@ -765,20 +765,17 @@ async def handle_server_command(message):
         except:
             storage_percent = 0
 
-       msg = (
-            f"<b>╭────────「 </b>⚡<u>Bot Statistics</u> 」\n<b>│\n├ ⏰ Bot uptime:</b> {diff}\n"
-            f"<b>├ 💾 Total disk space:</b> {totaldsk}\n"
-            f"<b>├ 📀 Used:</b> {progress_bar(useddsk)}\n"
-            f"<b>├ 💿 Free:</b> {freedsk}\n"
-            f"<b>├ 🔼 Downloaded:</b> {upb}\n"
-            f"<b>├ 🔽 Uploaded:</b> {dlb}\n"
-            f"<b>├ 🖥 CPU:</b> {progress_bar(cpupercent)}%\n"
-            f"<b>├ 🎮 RAM:</b> {progress_bar(mempercent)}%\n"
-            f"<b>├ 🔥 Cores:</b> {cores} | <b>Logical:</b> {lcores}\n"
-            f"<b>├ 🎲 CPU Frequency:</b> <code>{freqcurrent}</code> Mhz\n"
-            f"│\n<b>╰──「</b> nice. 」\n"
-    )
-    await message.reply(
+        msg = (
+            f"<b>BOT UPTIME:-</b> {diff}\n\n"
+            f"CPU Utilization: {progress_bar(cpupercent)} - {cpupercent}%\n\n"
+            f"Storage used:- {progress_bar(storage_percent)} - {storage_percent}%\n"
+            f"Total: {totaldsk} Free: {freedsk}\n\n"
+            f"Memory used:- {progress_bar(mempercent)} - {mempercent}%\n"
+            f"Total: {memtotal} Free: {memfree}\n\n"
+            f"Transfer Download:- {dlb}\n"
+            f"Transfer Upload:- {upb}\n"
+        )
+        await message.reply(
             msg,
             parse_mode="html",
             buttons=[[KeyboardButtonCallback("Get detailed stats.", "fullserver")]],
