@@ -766,17 +766,17 @@ async def handle_server_command(message):
             storage_percent = 0
 
         msg = (
-            f"<b>╭────────「 </b>⚡<u>Bot Statistics</u> 」\n<b>│\n├ ⏰ Bot uptime:</b> {diff}\n"
-            f"<b>├ 🖥 CPU Utilization:</b> {progress_bar(cpupercent)} - {cpupercent}%\n\n"
+            f"<b>╭────────「 ⚡<u>Bot Statistics</u> 」</b>\n<b>│\n├ ⏰ Bot uptime:</b> {diff}\n"
+            f"<b>├ 🖥 CPU Utilization:</b> {progress_bar(cpupercent)} - {cpupercent}%\n"
             f"<b>├ 📀 Used:</b>- {progress_bar(storage_percent)} - {storage_percent}%\n"
-            f"<b>├ 💾 Total disk space:</b> {totaldsk}\n\n"
-            f"<b>├ 💿 Free:</b> {freedsk}\n\n"
+            f"<b>├ 💾 Total disk space:</b> {totaldsk}\n"
+            f"<b>├ 💿 Free:</b> {freedsk}\n"
             f"<b>├ 🎮 RAM:</b>- {progress_bar(mempercent)} - {mempercent}%\n"
-            f"<b>├ 💾 Total Memory:</b> {memtotal}\n\n"
-            f"<b>├ 💿 Free:</b> {memfree}\n\n"
+            f"<b>├ 💾 Total Memory:</b> {memtotal}\n"
+            f"<b>├ 💿 Free:</b> {memfree}\n"
             f"<b>├ 🔼 Downloaded:</b>- {dlb}\n"
             f"<b>├ 🔽 Uploaded:</b>- {upb}\n"
-            f"│\n<b>╰──「</b> nice. 」\n"
+            f"│\n<b>╰──「 Nice. 」</b>\n"
         )
         await message.reply(
             msg,
