@@ -766,7 +766,7 @@ async def handle_server_command(message):
             storage_percent = 0
 
         msg = (
-            f"<b>╭────────「 ⚡<u>Bot Statistics</u> 」</b>\n<b>│\n├ ⏰ Bot uptime:</b> {diff}\n"
+            f"<b>╭───「 ⚡<u>Bot Statistics</u> 」</b>\n<b>│\n├ ⏰ Bot uptime:</b> {diff}\n"
             f"<b>├ 🖥 CPU Utilization:</b> {progress_bar(cpupercent)} - {cpupercent}%\n"
             f"<b>├ 📀 Used:</b>- {progress_bar(storage_percent)} - {storage_percent}%\n"
             f"<b>├ 💾 Total disk space:</b> {totaldsk}\n"
@@ -776,7 +776,7 @@ async def handle_server_command(message):
             f"<b>├ 💿 Free:</b> {memfree}\n"
             f"<b>├ 🔼 Downloaded:</b>- {dlb}\n"
             f"<b>├ 🔽 Uploaded:</b>- {upb}\n"
-            f"│\n<b>╰──「 Nice. 」</b>\n"
+            f"│\n<b>╰──「 @FilmClubGroup 」</b>\n"
         )
         await message.reply(
             msg,
