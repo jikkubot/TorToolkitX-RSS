@@ -268,7 +268,7 @@ Steps:-
   - without credentials instagram wont work whether post is public or private.
   - when passing passing instagram links to bot make sure it is like `https://www.instagram.com/p/CToApjNsHql/` or like `https://www.instagram.com/p/CToApjNsHql` dont pass any flags like `https://www.instagram.com/p/CToApjNsHql/?utm_medium=copy_link`....
 
-
+- `BOT_CMD_POSTFIX` : If more than one bots in groups : Eg  = BOT_CMD_POSTFIX - @TorToolkitBot
 
 ## **Rest Variables are not to be changed**
 
